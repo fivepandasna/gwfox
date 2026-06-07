@@ -4,7 +4,7 @@
 <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/ab43781e-f42d-4a0c-820d-cef274d20a12">
 <img alt="Preview">
 </picture><br><br>
-<a href="https://github.com/akkva/gwfox/archive/refs/heads/main.zip"><img src="https://img.shields.io/badge/GWfox-4.3.10-blue?style=for-the-badge"></a>
+<a href="https://github.com/akkva/gwfox/archive/refs/heads/main.zip"><img src="https://img.shields.io/badge/GWfox-4.3.13-blue?style=for-the-badge"></a>
 <a href="https://www.firefox.com"><img src="https://img.shields.io/badge/Firefox-151-blue?style=for-the-badge"></a>
 </div>
 
@@ -22,7 +22,6 @@
 | `widget.windows.mica.toplevel-backdrop` | 2 | Windows |
 | `widget.gtk.rounded-bottom-corners.enabled` | true | Linux |
 | `widget.macos.native-context-menus` | false | macOS |
-| ~~`sidebar.animation.enabled`~~ | ~~false~~ | ~~Required~~ |
 
 > ¹ Windows: Requires enabling "System theme — auto" in Firefox Add-ons manager.
 
@@ -51,8 +50,6 @@ Create these preferences in `about:config` to modify the UI:
 | `gwfox.bms` | Enable main window transparency | Linux only |
 | `gwfox.db` | Disable menu blur | |
 | `gwfox.ac` | Enable accent color | Edit `--bg0` in CSS to customize |
-| ~~`gwfox.plus`~~ | ~~Enable bundled layout~~| |
-| ~~`gwfox.plus_sc`~~ | ~~Use native window controls~~| |
 
 ### Numerical Settings
 
