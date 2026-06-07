@@ -1,6 +1,6 @@
 /* * * * * * * * * * * * * * * *
  * ░█▀▀▀░█░░░█░█▀▀▀░█▀▀█░█░░█░ *
- * ░█░▝█░█▄█▄█░█▀▀▀░█░ █░▄▀▀▄░ *
+ * ░█░▀█░█▄█▄█░█▀▀▀░█░ █░▄▀▀▄░ *
  * ░▀▀▀▀░▀░░░▀░▀░░░░▀▀▀▀░▀░░▀░ *
  *   github.com/akkva/gwfox    *
  * * * * * * * * * * * * * * * */
@@ -68,6 +68,8 @@
   --toolbar-bgcolor: var(--toolbox-bgcolor) !important;
   --toolbarbutton-hover-background: color-mix(in srgb, currentColor 10%, transparent) !important;
   --toolbarbutton-active-background: color-mix(in srgb, currentColor 15%, transparent) !important;
+  --toolbarbutton-background-color-hover: var(--button-hover-bgcolor) !important;
+  --toolbarbutton-background-color-active: var(--button-active-bgcolor) !important;
   @media -moz-pref("gwfox.blur") {
   --bf2: blur(15px);
   --bf3: blur(30px);
@@ -1558,6 +1560,7 @@ menupopup, panel[type="arrow"] {
   --panel-color: light-dark(#000, #fff) !important;
   --panel-shadow: 0 0 var(--panel-shadow-margin) hsla(0, 0%, 0%, 0.2) !important;
   --panel-background: light-dark(rgba(255, 255, 255, .55), rgba(15, 15, 12, .55)) !important;
+  --panel-background-color: light-dark(rgba(255, 255, 255, .55), rgba(15, 15, 12, .55)) !important;
 @media (-moz-mac-tahoe-theme) or (-moz-gtk-theme-family: adwaita) or (-moz-gtk-theme-family: yaru) {
   --panel-border-radius: var(--br4) !important;
 }
@@ -1573,9 +1576,12 @@ panel[type="arrow"] {
   --arrowpanel-background: transparent !important;
   --arrowpanel-border-radius: 0 !important;
 @media (-moz-mac-tahoe-theme) {
-  --panel-background: none !important;
+  --panel-background: transparent !important;
+  --panel-background-color: transparent !important;
 }
 }
+
+* { --panel-list-border-color: var(--bg3) !important; }
 
 @media not (-moz-platform: linux) {
 .toolbar-menupopup {
@@ -1583,8 +1589,12 @@ panel[type="arrow"] {
   --panel-border-color: transparent !important;
   --panel-shadow: 0 0 var(--panel-shadow-margin) hsla(0, 0%, 0%, 0.2) !important;
   --panel-background: light-dark(rgba(255, 255, 255, .55), rgba(15, 15, 12, .55)) !important;
+  --panel-background-color: light-dark(rgba(255, 255, 255, .55), rgba(15, 15, 12, .55)) !important;
+  --menuitem-border-radius: var(--br2) !important;
 @media (-moz-mac-tahoe-theme) {
-  --panel-background: none !important;
+  --panel-background: transparent !important;
+  --panel-background-color: transparent !important;
+  
 }
 }
 }
@@ -2572,11 +2582,12 @@ richlistitem {
   border: none !important;
 }
 
-menupopup, panel[type="arrow"] {
+menupopup, panel[type="arrow"], .toolbar-menupopup {
   --panel-shadow: var(--bs1) !important;
   --panel-shadow-margin: 18px !important;
   --panel-background: var(--bg2) !important;
   --panel-border-color: transparent !important;
+  --menuitem-border-radius: var(--br2) !important;
   --arrowpanel-border-color: transparent !important;
 @media -moz-pref("gwfox.bms") {
   --panel-background: light-dark(rgba(255, 255, 255, .98), rgba(25, 25, 25, .99)) !important;
@@ -2585,6 +2596,10 @@ menupopup, panel[type="arrow"] {
   --panel-border-color: rgba(255, 255, 255, .06) !important;
   --arrowpanel-border-color: rgba(255, 255, 255, .06) !important;
 }
+}
+
+panel[type="arrow"], .toolbar-menupopup {
+  margin-bottom: 0 !important;
 }
 
 #tab-preview-panel {
@@ -2788,7 +2803,7 @@ menuitem[type="radio"][disabled] .menu-icon {
 }
 
 #main-button img[src^="chrome://browser/content/genai/assets/brands/"] {
-  content: url("chrome://global/skin/icons/highlights.svg");
+  content: url("chrome://global/skin/icons/highlights.svg") !important;
 }
 
 /* sidebar */
@@ -2814,6 +2829,15 @@ menuitem[type="radio"][disabled] .menu-icon {
   clip-path: none;
 }
 }
+@media -moz-pref("gwfox.toolbar") {
+#PersonalToolbar {
+  opacity: 0;
+  transition: opacity .45s !important;
+:root:has(:is(#vertical-spacer, #PersonalToolbar):hover, :is(#PersonalToolbar .bookmark-item, #PersonalToolbar #PlacesChevron)[open]) & {
+  opacity: 1;
+}
+}
+}
 &:has(#sidebar-box:not([hidden])) {
 #sidebar-box {
   clip-path: inset(-8px);
@@ -2828,7 +2852,9 @@ menuitem[type="radio"][disabled] .menu-icon {
 }
 }
 }
+@media -moz-pref("gwfox.toolbar") {
 #PersonalToolbar {
+  opacity: 1;
   clip-path: inset(-8px);
   transition: clip-path .45s !important;
 :root:has(#tabbrowser-tabs[expanded]) & {
@@ -2838,6 +2864,7 @@ menuitem[type="radio"][disabled] .menu-icon {
 }
 @media -moz-pref("gwfox.sidebar", 3) {
   clip-path: inset(-8px -8px -8px 270px);
+}
 }
 }
 }
