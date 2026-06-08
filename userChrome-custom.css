@@ -1,0 +1,51 @@
+/* Custom tweaks */
+#context-bookmarklink,
+#context-sendlinktodevice,
+#context-openTabInWindow,
+#context-openlink,
+#context-stripOnShareLink,
+#context-translate-selection,
+#context-bookmarklink,
+#context-savelink,
+#context-selectall,
+#context-sendimage,
+#context-setDesktopBackground,
+#context-translate-selection,
+#context-sep-sendlinktodevice,
+#context-stripOnShareLink,
+#context-savelink,
+#context-sep-setbackground,
+#context-setDesktopBackground
+#context-sendlinktodevice, 
+#context-sep-sendlinktodevice,
+#context_bookmarkTab,
+#context_bookmarkSelectedTabs,
+#context_openTabInAnotherContainer,
+#context_reopenInContainer,
+#context_sendTabToDevice,
+#context-sendpagetodevice,
+#context-sep-sendpagetodevice,
+.share-tab-url-item
+{
+  display: none !important;
+}
+
+#context_selectAllTabs,
+#context_moveTabOptions,
+#context_undoCloseTab,
+#context_closeDuplicateTabs,
+#tab-context-share-url
+{
+  display: none !important;
+}
+
+
+#context-openlink:not([hidden]) ~ *:not([hidden], #context-sep-open) {
+  order: 1;
+}
+
+/* Remove "New" badge from menu items */
+menuitem.badge-new::after { display: none !important; }
+
+#context_selectAllTabs + menuseparator,
+#context_sendTabToDeviceSeparator { display: none !important; }
