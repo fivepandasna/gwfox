@@ -1,11 +1,9 @@
 <div align="center">
 <picture>
-<source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/3cddb35e-ea52-41c7-8e20-f7bb0e3524a3">
-<source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/ab43781e-f42d-4a0c-820d-cef274d20a12">
+<source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/17e70652-64ad-419c-b28b-2c8b029a202d">
+<source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/11bb3990-d6d6-4657-8a95-84f76f0f30b4">
 <img alt="Preview">
-</picture><br><br>
-<a href="https://github.com/akkva/gwfox/archive/refs/heads/main.zip"><img src="https://img.shields.io/badge/GWfox-4.3.13-blue?style=for-the-badge"></a>
-<a href="https://www.firefox.com"><img src="https://img.shields.io/badge/Firefox-151-blue?style=for-the-badge"></a>
+</picture>
 </div>
 
 ## Installation
@@ -40,16 +38,19 @@ Create these preferences in `about:config` to modify the UI:
 
 | Preference | Description | Notes |
 | :--- | :--- | :--- |
-| `gwfox.icons` | Enable menu icons | |
-| `gwfox.blur` | Enable UI blur effects | Disable if performance issues occur |
 | `gwfox.toolbar` | Auto-hide bookmarks toolbar | |
-| `gwfox.urlbar` | Move address bar to sidebar | Sidebar expanded only (not on hover/collapsed) |
+| `gwfox.urlbar` | Move address bar to sidebar | Sidebar expanded (not hover to expand) |
+| `gwfox.blur` | Add acrylic effect to the floating panel | |
+| `gwfox.ac` | Enable accent color | Edit `--bg0` in CSS to customize |
 | `gwfox.atbc` | Adaptive Tab Bar Colour compatibility | |
 | `gwfox.newtab` | Enable New Tab transparency | Requires `allow_transparent_browser` |
 | `gwfox.noborder` | Remove window borders | |
 | `gwfox.bms` | Enable main window transparency | Linux only |
-| `gwfox.db` | Disable menu blur | |
-| `gwfox.ac` | Enable accent color | Edit `--bg0` in CSS to customize |
+| `gwfox.icons` | Add menu icons | |
+| `gwfox.mwc` | Enable macOS-style window controls  | Windows/Linux |
+| `gwfox.msc` | Enable macOS-style tab close button | |
+| `gwfox.fsi` | Enable FluentUI System Icons | [Source](https://github.com/microsoft/fluentui-system-icons) |
+
 
 ### Numerical Settings
 
