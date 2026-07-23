@@ -89,11 +89,10 @@
 #download {
   color: #fff !important;
   background-color: light-dark(var(--bg0), color-mix(in srgb, var(--bg0) 90%, #000)) !important;
-  outline-color: light-dark(color-mix(in srgb, var(--bg0) 55%, transparent), color-mix(in srgb, var(--bg0) 45%, #555)) !important;
 &:hover { background-color: light-dark(color-mix(in srgb, var(--bg0) 90%, #fff), color-mix(in srgb, var(--bg0) 80%, #fff)) !important; }
 }
 
-#copy {
+#download, #cancel, #copy {
   outline-color: light-dark(color-mix(in srgb, var(--bg0) 55%, transparent), color-mix(in srgb, var(--bg0) 45%, #555)) !important;
 }
 
