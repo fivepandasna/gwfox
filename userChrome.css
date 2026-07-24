@@ -2789,6 +2789,10 @@ menupopup, panel[type="arrow"], .toolbar-menupopup {
   --panel-border-color: transparent !important;
   --menuitem-border-radius: var(--br2) !important;
   --arrowpanel-border-color: transparent !important;
+@media -moz-pref("gwfox.bms") {
+  --panel-background: light-dark(rgba(255, 255, 255, 1), rgba(25, 25, 25, 1)) !important;
+  --panel-background-color: light-dark(rgba(255, 255, 255, 1), rgba(25, 25, 25, 1)) !important;
+}
 @media -moz-pref("gwfox.bms") and -moz-pref("gwfox.blur") {
   --panel-background: light-dark(rgba(255, 255, 255, .98), rgba(25, 25, 25, .99)) !important;
   --panel-background-color: light-dark(rgba(255, 255, 255, .98), rgba(25, 25, 25, .99)) !important;
